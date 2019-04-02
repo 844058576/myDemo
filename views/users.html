@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en" ondragstart="return false">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="../public/css/findMusic/index.css">
+    <link rel="stylesheet" href="../public/css/rankList/rankList.css">
+    <script src="../node_modules/jquery/dist/jquery.js"></script>
+    <style></style>
+</head>
+
+<body>
+    <div class="app">
+        <!-- 标题导航条 -->
+        {{include './_partials/default/header.html'}}
+
+        <div class="content">
+            <!-- 注册、登录 -->
+            <div class="m_login" id="m_login"></div>
+
+            <!-- 首页 -->
+            {{include './_partials/change/carousel.html'}}
+
+            <!-- 专辑页面 -->
+            {{include './_partials/change/album.html'}}
+
+            <!-- 我的音乐 -->
+            {{include './_partials/change/myMusic.html'}}
+
+            <!-- 加载中。。。 -->
+            {{include './_partials/change/loader.html'}}
+
+            <!-- 榜单 -->
+            {{include './_partials/change/rankList.html'}}
+
+            <!-- 歌手页面内容 -->
+            {{include './_partials/change/singer.html'}}
+
+            <!-- 收藏歌单内容 -->
+            {{include './_partials/default/collect.html'}}
+
+            <!-- 歌曲详细内容 -->
+            {{include './_partials/change/song.html'}}
+
+            <!-- 搜索页面 -->
+            {{include './_partials/change/search.html'}}
+
+            <!-- 分类页面 -->
+            {{include './_partials/change/classify.html'}}
+        </div>
+
+
+        <!-- 音频页面内容 -->
+        {{include './_partials/default/audio.html'}}
+
+        <div class="back-top" title="返回顶部">︿</div>
+
+        <div class="footer"></div>
+    </div>
+    <script src="../public/js/index/index.js"></script>
+    <script src="../public/js/index/demo.js"></script>
+    <script src="../public//js/public/forbidScroll.js"></script>
+    <script>
+       
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,135 @@
+<link rel="stylesheet/less" type="text/css" href="../../../public/css/audio/index.less" />
+<script src="../../../public/js/public/less.min.js" type="text/javascript"></script>
+
+<div class="g-btmbar">
+    <div class="m-playbar">
+
+        <!-- <audio src="../../../resouce/music/小半.mp3" autoplay></audio> -->
+        <div class="bg">
+            <div class="wrap">
+                <div class="btns">
+                    <a href="void:0" class="prv prev-btn" title="上一首(ctrl+←)"></a>
+                    <a href="void:0" class="ply j-flag play-btn" title="播放/暂停(p)"></a>
+                    <a href="void:0" class="next next-btn" title="下一首(ctrl+→)"></a>
+                </div>
+                <div class="head j-flag">
+                    <a href="void:0" class="musicmask">
+                        <img src="../../../public/images/audio/default_album.jpg" alt="">
+                    </a>
+                </div>
+                <div class="play">
+                    <div class="j-flag words">
+                        <a href="void:0" class="f-thide name fc1 f-fl" title=""> </a>
+                        <a href="void:0" class="singer"> </a>
+                    </div>
+                    <div class="m-pbar">
+                        <div class="pro-bottom"></div>
+                        <div class="pro-top">
+                            <div class="spot"></div>
+                        </div>
+                    </div>
+                    <span class="j-flag time">
+                        <span class="curtime">00:00</span>/<span class="duration">00:00</span>
+                    </span>
+                </div>
+                <div class="oper f-fl">
+                    <a href="void:0" class="icn icn-add j-flag ico-add" title="收藏"></a>
+                    <a href="void:0" class="icn icn-share" title="分享"></a>
+                </div>
+                <div class="ctrl f-fl f-pr j-flag">
+                    <a href="void:0" class="icn icn-vol" title="音量"></a>
+                    <a href="void:0" class="icn icn-one" title="单曲循环"></a>
+                    <span class="add f-pr">
+                        <!-- <span class="tip">已开始播放</span> -->
+                        <a href="void:0" class="icn icn-list s-fc3" title="播放列表">0</a>
+                    </span>
+                </div>
+            </div>
+
+            <div class="list">
+                <div class="listhd">
+                    <div class="listhdc">
+                        <h4>播放列表
+                            <!-- (<span class="j-flag">6</span>) -->
+                        </h4>
+                        <a href="void:0" class="addall">
+                            <span class="ico ioc-add"></span>
+                            收藏全部
+                        </a>
+                        <span class="line"></span>
+                        <a href="void:0" class="clear">
+                            <span class="ico icn-del"></span>
+                            清除
+                        </a>
+                        <p class="lytit"> </p>
+                        <span class="close">关闭</span>
+                    </div>
+                </div>
+
+                <dis class="listbd">
+                    <div class="msk"></div>
+                    <div class="listbdc j-flag">
+                        <ul class="f-cb">
+                            <!-- <li class="z-sel">
+                            <div class="col clo-1">
+                               
+                                <duv class="playicn"></duv>
+                            </div>
+                            <div class="col clo-2">演员</div>
+                            <div class="col clo-3">
+                                <div class="icns">
+                                    <i class="ico icn-del" title="删除">删除</i>
+                                    <i class="ico ico-dl" title="下载">下载</i>
+                                    <i class="ico ico-share" title="分享">分享</i>
+                                    <i class="j-t ico ico-add" title="收藏">收藏</i>
+                                </div>
+                            </div>
+                            <div class="col clo-4">
+                                <span title="薛之谦">
+                                    <a class="singerName" href="void:0" hidefocus="true">薛之谦</a>
+                                </span>
+                            </div>
+                            <div class="col clo-5">04:21</div>
+                            <div class="col clo-6">
+                                <a href="void:0" class="ico ico-src" title="来自专辑">来源</a>
+                            </div>
+                        </li> -->
+                        </ul>
+                    </div>
+                    <div class="bline j-flag">
+                        <span class="scrol"></span>
+                    </div>
+                    <div class="ask j-flag">
+                        <a href="void:0" class="ico ico-ask"></a>
+                    </div>
+                    <div class="upload j-flag">
+                        <a href="void:0" class="">报错</a>
+                    </div>
+                    <div class="msk2"></div>
+                    <div class="listlyric j-flag">
+                        <!-- <p class="j-flag z-sel" date-time="0">作曲 : 薛之谦</p>
+                        <p class="j-flag" date-time="1">作词 : 薛之谦</p>
+                        <p class="j-flag" date-time="4.2">简单点说话的方式简单点</p> -->
+                    </div>
+                    <div class="bline bline-1 j-flag">
+                        <span class="scrol scrol-1 j-flag"></span>
+                    </div>
+                </dis>
+            </div>
+        </div>
+
+
+        <div class="updn">
+            <a href="void:0" class="btn lockbtn"></a>
+        </div>
+    </div>
+</div>
+
+<script src="../../../public/js/audio/render.js"></script>
+<script src="../../../public/js/audio/controlManager.js"></script>
+<script src="../../../public/js/audio/audioManager.js"></script>
+<script src="../../../public/js/audio/rederList.js"></script>
+<script src="../../../public/js/audio/processor.js"></script>
+<script src="../../../public/js/index/collect.js"></script>
+<!-- <script src = "../../../public/js/audio/playlist.js"></script> -->
+<script src="../../../public/js/audio/audio.js"></script>

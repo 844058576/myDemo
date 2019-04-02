@@ -1,0 +1,16 @@
+body{
+    background: #efefef;
+}
+.backend{
+    width: 380px;
+    height: 200px;
+    margin: 200px auto;
+    border: 1px solid #ccc;
+    text-align: center;
+}
+span,input{
+    margin-top: 5px;
+}
+button {
+    margin-top: 5px;
+}

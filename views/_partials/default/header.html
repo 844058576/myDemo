@@ -1,0 +1,49 @@
+<!-- 标题导航栏 -->
+<div class="header">
+    <div class="m-top">
+        <h1 class="logo">
+            <label for=""></label>
+            <a href="void:0">在线音乐</a>
+        </h1>
+        <ul>
+          
+                <li><a href="void:0" class="title active" id="index">首页</a></li>
+                <li><a href="void:0" class="title" id="myMusic">我的音乐</a></li>
+                <li><a href="void:0" class="title" id="list">榜单</a></li>
+                <li><a href="void:0" class="title" id="singer">歌手</a></li>
+            
+        </ul>
+        <!-- 标题搜索框 -->
+        <div class="srchbg">
+            <span class="parent">
+                <input type="text" id="serach" class="txt">
+                <label id="tips" class="ph">音乐/视频/电台/用户</label>
+            </span>
+        </div>
+        <!-- 标题用户设置 -->
+        <div class="h-user m-tophead">
+            <div id="lis" class="lis">
+                <div class="user">
+                    {{ if user }}
+                    <img src="../public/images/index/touxiang.jpg" class="user-img" alt="头像" title="">
+                    <!-- 用来获取user登录数据（帐号、密码） -->
+                    <input type="hidden" name="id" value="{{user[0].userId}}" class="getUserId" >
+                    <li class="dropdown-current-user" style="display:none;">
+                        {{ user }}
+                    </li>
+                    {{ else }}
+                    <a id="link" class="h-login" href="void:0">登录</a>
+                    {{ /if }}
+                </div>
+
+                <div class="user-li" id="user-li">
+                    <ul id="ul1" class="h-ul">
+                        <li><a class="my-item myIndex"><i class="icn icn-hm"></i><em>我的主页</em></a></li>
+                        <li><a class="my-item personalset"><i class="icn icn-st"></i><em>个人设置</em></a></li>
+                        <li><a class="my-item exit" href="/exit"><i class="icn icn-ex"></i><em>退出</em></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

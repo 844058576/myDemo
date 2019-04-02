@@ -1,0 +1,182 @@
+<div class="index">
+    <!-- 这是轮播图 -->
+    <div id="perspective">
+        <div id="wrap">
+            <img class="wrap_img" date-id="6" oncontextmenu="return false;" onselectstart="return false;" src="../public/images/album/A.I.N.Y. 爱你.jpg"
+                alt="" />
+            <img class="wrap_img" date-id="13" oncontextmenu="return false;" onselectstart="return false;" src="../public/images/album/My Love.jpg"
+                alt="" />
+            <img class="wrap_img" date-id="8" oncontextmenu="return false;" onselectstart="return false;" src="../public/images/album/The Best of G.E.M.jpg"
+                alt="" />
+            <img class="wrap_img" date-id="16" oncontextmenu="return false;" onselectstart="return false;" src="../public/images/album/不如吃茶去.jpg"
+                alt="" />
+            <img class="wrap_img" date-id="9" oncontextmenu="return false;" onselectstart="return false;" src="../public/images/album/云烟成雨.jpg"
+                alt="" />
+            <img class="wrap_img" date-id="4" oncontextmenu="return false;" onselectstart="return false;" src="../public/images/album/光年之外.jpg"
+                alt="" />
+            <img class="wrap_img" date-id="5" oncontextmenu="return false;" onselectstart="return false;" src="../public/images/album/另一个童话.jpg"
+                alt="" />
+            <img class="wrap_img" date-id="3" oncontextmenu="return false;" onselectstart="return false;" src="../public/images/album/如也.jpg"
+                alt="" />
+            <img class="wrap_img" date-id="2" oncontextmenu="return false;" onselectstart="return false;" src="../public/images/album/小梦大半.jpg"
+                alt="" />
+            <img class="wrap_img" date-id="7" oncontextmenu="return false;" onselectstart="return false;" src="../public/images/album/新的心跳.jpg"
+                alt="" />
+            <img class="wrap_img" date-id="12" oncontextmenu="return false;" onselectstart="return false;" src="../public/images/album/渺小.jpg"
+                alt="" />
+        </div>
+    </div>
+
+    <!-- <p>{{datas}}</p> -->
+
+    <!-- 这是分类区域 -->
+    <div class="g-wrap3">
+        <div class="n-rcmd">
+            <div class="v-hd2">
+                <a href="void:0" class="tit f-ff2 f-tdn">热门推荐</a>
+                <div class="tab recommend">
+                    <a href="void:0" class="s-fc3">华语</a>
+                    <span class="line">|</span>
+                    <a href="void:0" class="s-fc3">流行</a>
+                    <span class="line">|</span>
+                    <a href="void:0" class="s-fc3">摇滚</a>
+                    <span class="line">|</span>
+                    <a href="void:0" class="s-fc3">民谣</a>
+                    <span class="line">|</span>
+                    <a href="void:0" class="s-fc3">电子</a>
+                </div>
+            </div>
+
+
+            <div class="ztag j-flag">
+                <div class="n-srchrst">
+                    <div class="srchsongst">
+                        {{ each datas}}
+                        <div class="item f-cb h-flag" date-id="{{$value.Id}}" data-singer="{{$value.SingerId}}"
+                            data-ablum="{{$value.CDId}}">
+                            <div class="td">
+                                <div class="hd">
+                                    <a id="song_30431367" class="ply " title="播放"></a>
+                                </div>
+                            </div>
+
+                            <div class="td w0">
+                                <div class="sn">
+                                    <div class="text MusicName">
+                                        <a href="void:0"><b title="{{$value.MusicName}}">{{$value.MusicName}}</b></a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="td">
+                                <div class="opt hshow">
+                                    <a class="u-icn u-icn-81 icn-add" href="javascript:;" title="添加到播放列表" hidefocus="true"></a>
+                                    <span class="icn icn-fav" title="收藏"></span>
+                                    <span class="icn icn-share" title="分享"></span>
+                                    <a href="../../../resouce/music/{{$value.MusicUrl}}" download="{{$value.MusicUrl}}">
+                                        <span class="icn icn-dl" title="下载"></span>
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div class="td w1">
+                                <div class="text singerName">
+                                    <a href="void:0">
+                                        <span class="s-fc7">{{$value.singerName}}</span>
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div class="td w2">
+                                <div class="text">
+                                    <a class="s-fc3" href="void:0" date-id="{{$value.CDId}}" title="{{$value.CDName}}">{{$value.CDName}}</a>
+                                </div>
+                            </div>
+
+                            <div class="td songTime">{{$value.songTime}}</div>
+                        </div>
+                        {{/each}}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <!-- 这是榜单区域 -->
+    <div class="n-bill">
+        <div class="v-hd2">
+            <a href="void:0" class="tit f-ff2 f-tdn">榜单</a>
+        </div>
+        <div class="n-bilst">
+            <dl class="blk ">
+                <dt class="top">
+                    <div class="cver u-cover u-cover-4">
+                        <img class="j-img" src="../../../public/images/rankList/新歌榜1.jpg">
+                        <a href="void:0" class="msk" title="云音乐新歌榜"></a>
+                    </div>
+                    <div class="tit">
+                        <a href="void:0" title="云音乐新歌榜">
+                            <h3 class="f-fs1 f-thide">云音乐新歌榜</h3>
+                        </a>
+                    </div>
+                </dt>
+                <dd>
+                    <ol>
+                        {{ each data2}}
+                        <li class="z-hvr" date-id="{{$value.Id}}">
+                            <span class="no no-top">{{$index + 1}}</span>
+                            <a href="void:0" class="nm s-fc0 f-thide" title="{{$value.MusicName}}">{{$value.MusicName}}</a>
+                            <div class="oper">
+                                <a href="void:0" class="s-bg s-bg-11 ply" title="播放" hidefocus="true"></a>
+                                <a href="void:0" class="u-icn u-icn-81 icn-add" title="添加到播放列表" hidefocus="true"></a>
+                                <a href="void:0" class="s-bg s-bg-12" title="收藏" hidefocus="true"></a>
+                            </div>
+                        </li>
+                        {{/each}}
+                    </ol>
+
+                    <div class="more">
+                        <a href="void:0" class="s-fc0">查看全部&gt;</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <dl class="blk ">
+                <dt class="top">
+                    <div class="cver u-cover u-cover-4">
+                        <img class="j-img" src="../../../public/images/rankList/热歌榜1.jpg">
+                        <a href="void:0" class="msk" title="云音乐热歌榜"></a>
+                    </div>
+                    <div class="tit">
+                        <a href="void:0" title="云音乐热歌榜">
+                            <h3 class="f-fs1 f-thide">云音乐热歌榜</h3>
+                        </a>
+                    </div>
+                </dt>
+                <dd>
+                    <ol>
+                        {{ each data3}}
+                        <li class="z-hvr" date-id="{{$value.Id}}">
+                            <span class="no no-top">{{$index + 1}}</span>
+                            <a href="void:0" class="nm s-fc0 f-thide" title="{{$value.MusicName}}">{{$value.MusicName}}</a>
+                            <div class="oper">
+                                <a href="void:0" class="s-bg s-bg-11 ply" title="播放" hidefocus="true"></a>
+                                <a href="void:0" class="u-icn u-icn-81 icn-add" title="添加到播放列表" hidefocus="true"></a>
+                                <a href="void:0" class="s-bg s-bg-12" title="收藏" hidefocus="true"></a>
+                            </div>
+                        </li>
+                        {{/each}}
+
+                    </ol>
+
+                    <div class="more">
+                        <a href="void:0" class="s-fc0">查看全部&gt;</a>
+                    </div>
+                </dd>
+            </dl>
+        </div>
+    </div>
+</div>

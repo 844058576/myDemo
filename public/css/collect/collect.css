@@ -1,0 +1,179 @@
+em, i {
+    font-style: normal;
+    text-align: left;
+    font-size: inherit;
+}
+div.m-layer-w2 {
+    width: 480px;
+}
+.collect div.m-layer {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    margin-top: -206px;
+    margin-left: -265px;
+    z-index: 9998;
+    width: 530px;
+    border-radius: 4px;
+    box-shadow: 0 5px 16px rgba(0,0,0,0.8);
+    border: none;
+}
+div.m-layer .zbar {
+    position: relative;
+    z-index: 10;
+    border-bottom: 1px solid #191919;
+    border-radius: 4px 4px 0 0;
+    background: #2d2d2d;
+    cursor: move;
+    line-height: 30px;
+}
+div.m-layer .zttl {
+    padding-right: 45px;
+    margin: 0;
+    height: 38px;
+    line-height: 38px;
+    padding-left: 18px;
+    border-radius: 3px 3px 0 0;
+    font-weight: bold;
+    font-size: 14px;
+    color: #fff;
+    background-position: 50% 0;
+}
+div.m-layer .zbar, div.m-layer .zttl {
+    cursor: move;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+}
+.f-thide {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    word-wrap: normal;
+}
+div.m-layer div.zcnt {
+    padding: 0;
+    border: 1px solid #878787;
+    border-width: 0 1px 1px;
+    border-radius: 0 0 4px 4px;
+    background: #fff;
+}
+div.m-layer div.lyct-1 {
+    padding: 0;
+}
+.m-favgd {
+    overflow-y: auto;
+    height: 374px;
+}
+.m-favgd .tit {
+    padding: 10px 0 10px 35px;
+    background: #e6e6e6;
+    cursor: pointer;
+}
+.m-favgd .u-icn-33 {
+    margin-right: 10px;
+}
+.tit .u-icn-33 {
+    width: 35px;
+    height: 36px;
+    background-position: 0 -495px;
+}
+.u-icn, .u-icn2, .u-icn3 {
+    display: inline-block;
+    overflow: hidden;
+    vertical-align: middle;
+}
+.u-icn, .u-title-1 .out .icon {
+    background: url(../../images/myMusic/icon.png) no-repeat 0 9999px;
+}
+
+.m-favgd ul li {
+    padding: 6px 0 6px 35px;
+    border-top: 1px solid #e0e0e0;
+}
+.m-favgd ul .item {
+    padding-left: 50px;
+}
+.m-favgd ul .avatar {
+    position: relative;
+    display: block;
+    width: 40px;
+    height: 40px;
+}
+.m-favgd ul .left {
+    display: inline;
+    float: left;
+    margin-left: -50px;
+    overflow: hidden;
+    width: 40px;
+}
+
+.m-favgd ul .name {
+    margin-top: 2px;
+    margin-bottom: 8px;
+}
+.m-favgd ul p {
+    word-wrap: break-word;
+}
+.m-favgd ul * {
+    cursor: pointer;
+}
+.f-thide {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    word-wrap: normal;
+}
+.m-favgd ul * {
+    cursor: pointer;
+}
+.s-fc0, a.s-fc0:hover {
+    color: #000;
+}
+.m-favgd ul p {
+    word-wrap: break-word;
+}
+.s-fc3, a.s-fc3:hover {
+    color: #666;
+}
+div.m-layer .zcls {
+    background: url(../../images/myMusic/layer.png) no-repeat 0 9999px;
+}
+div.m-layer .zcls {
+    position: absolute;
+    z-index: 20;
+    top: 16px;
+    right: 20px;
+    width: 10px;
+    height: 10px;
+    overflow: hidden;
+    text-indent: -9999px;
+    cursor: pointer;
+    background-position: 0 -95px;
+}
+
+.xtag:hover{
+    background: #e6e6e6;
+}
+.xtag img{
+    width: 40px;
+    height: 40px;
+}
+.xtag a:hover{
+    text-decoration: none;
+}
+.succEidt{
+    display: none;
+    width: 150px;
+    height: 60px;
+    line-height: 60px;
+    color: #fff;
+    background: rgba(10,10,10,.6);
+    text-align: center;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    margin-top: -30px;
+    margin-left: -75px;
+    z-index: 10;
+}

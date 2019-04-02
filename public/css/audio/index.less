@@ -1,0 +1,786 @@
+*{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+    font-style: normal;
+}
+div,a,span,i{
+    font-size: 12px;
+}
+
+.m-playbar{
+    width: 100%;
+    height: 53px;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    margin: 0;
+    padding: 0;
+    z-index: 10;
+    .bg{
+        width: calc(~"100% - 67px");
+        height: 53px;
+        background: url(../../images/audio/playbar.png);
+        background-position: 0 0;
+        background-repeat: repeat-x;
+        overflow: hidden;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+        .wrap{
+            width: 980px;
+            height: 47px;
+            display: flex;
+            align-items: center;
+            div{
+                float: left;
+            }
+
+            .btns{
+                margin: 0;
+                padding: 0;
+                width: 137px;
+                height: 42px;
+                display: flex;
+                align-items: center;
+                a{
+                    display: inline-block;
+                    margin-right: 8px;
+                }
+
+                .prv{
+                    width: 28px;
+                    height: 28px;
+                    background: url(../../images/audio/playbar.png);
+                    background-position: 0 -130px;
+                    &:hover{
+                        background-position: -30px -130px;
+                    }
+                }
+                
+                .ply{
+                    width: 36px;
+                    height: 36px;
+                    background: url(../../images/audio/playbar.png);
+                    background-position: 0 -204px;
+                    &:hover{
+                        background-position: -40px -204px;
+                    }
+                }
+                .playing{
+                    background-position: 0 -165px;
+                    &:hover{
+                        background-position: -40px -165px;
+                    }
+                }
+
+                .next{
+                    width: 28px;
+                    height: 28px;
+                    background: url(../../images/audio/playbar.png);
+                    background-position: -80px -130px;
+                    &:hover{
+                        background-position: -110px -130px;
+                    }
+                }
+            }
+
+            .head.j-flag{
+                width: 34px;
+                height: 34px;
+                background: url(../../images/audio/playbar.png);
+                background-position: 0 -80px;
+                margin-right: 15px;
+                .musicmask{
+                    display: inline-block;
+                        
+                    img{
+                        width: 34px;
+                        height: 34px;
+                    }
+                }
+            }
+            
+            .play{
+                width: 608px;
+                height: 37px;
+                .j-flag.words{
+                    width: 608px;
+                    height: 28px;
+                    line-height: 28px;
+                    position: absolute;
+                    top: 6px;
+                    display: flex;
+                    align-items: flex-start;
+                    a{
+                        font-size: 12px;
+                        text-decoration: none;
+                    }
+
+                    .f-thide.name.fc1.f-fl{
+                        display:inline-block;
+                        color: #fff;
+                        max-width: 300px;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                        white-space: nowrap;
+                        word-wrap: normal;
+                        &:hover{
+                            text-decoration: underline;
+                        }
+                    }
+
+                    .singer{
+                        margin-left: 15px;
+                        color: #9b9b9b;
+                        &:hover{
+                            text-decoration: underline;
+                        }
+                    }
+                }
+
+                .m-pbar{
+                    width: 80%;
+                    height: 8px;
+                    // margin-top: 4px;
+                    padding: 5px 0px;
+                    overflow: hidden;
+                    display: inline;
+                    position: relative;
+                    top: 20px;
+                    float: left;
+                    .pro-bottom,
+                    .pro-top{
+                        width: 100%;
+                        height: 2px;
+                        position: absolute;
+                        top: 50%;
+                        margin-top: -1px; 
+                    }
+                    .pro-bottom{
+                        background-color: rgba(255,255,255,0.6);
+                    }
+                    .pro-top{
+                        background-color: #fff;
+                        transform: translateX(-100%);
+                        position: relative;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        .spot{
+                            width: 20px;
+                            height: 20px;
+                            position: absolute;
+                            display: flex;
+                            right: -13px;
+                            justify-content: center;
+                            align-items: center;
+                            &::before {
+                               content: '';
+                               display: block;
+                               width: 6px;
+                               height: 6px;
+                               background-color: #fff;
+                               border-radius: 50%;
+                           }
+                        }
+                    }
+                   
+                    .j-flag.time{
+                        width: 70px;
+                        height: 14px;
+                        position: relative;
+                        right: -10px;
+                        top: -8px;
+                        transform: translateX(100%);
+                        color: #797979;
+                        font-size: 12px;
+                        
+                    }
+                }
+
+                .time{
+                    width: 70px;
+                    height: 14px;
+                    font-size: 12px;
+                    color: #797979;
+                    position: relative;
+                    top: 55%;
+                    margin-left: 10px;
+                    display: inline-block;
+                    span{
+                        color: #797979;
+                        padding-right: 2px;
+                    }
+                    span.duration{
+                        position: absolute;
+                        top: 0;
+                        left: 40px;
+                        display: block;
+                    }
+                }
+            }
+            .oper.f-fl{
+                width: 60px;
+                height: 36px;
+                a{
+                    display: inline-block;
+                    width: 25px;
+                    height: 25px;
+                    background: url('../../images/audio/playbar.png');
+                }
+                .icn-add{
+                    background-position: -88px -163px;
+                    &:hover{
+                        background-position: -88px -189px;
+                    }
+                }
+                .icn-share{
+                    background-position: -114px -163px;
+                    &:hover{
+                        background-position: -114px -189px;
+                    }
+                }
+            }
+
+            .ctrl.f-fl.f-pr.j-flag{
+                position: relative;
+                top: -5px;
+                width: 126px;
+                height: 36px;
+                padding-left: 13px;
+                display: flex;
+                align-items: center;
+                .icn-vol,
+                .icn{
+                    display: inline-block;
+                    width: 25px;
+                    height: 25px;
+                    background: url('../../images/audio/playbar.png');
+                }
+                .icn-vol{
+                    background-position: -2px -248px;
+                    position: relative;
+                    &:hover{
+                        background-position: -31px -248px;
+                    }
+                    &::before{
+                        content: '';
+                        display: block;
+                        position: absolute;
+                        left: -8px;
+                        top: 3px;
+                        width: 1px;
+                        height: 18px;
+                        background-color: #999;
+                        border-radius: 50%;
+                    }
+                }
+                .icn-one{
+                    background-position: -66px -344px;
+                    &:hover{
+                        background-position: -93px -344px;
+                    }
+                }
+                .icn-loop{
+                    background-position: -3px -344px;
+                    &:hover{
+                        background-position: -33px -344px;
+                    }
+                }
+                .icn-shuffle{
+                    background-position: -66px -248px;
+                    &:hover{
+                        background-position: -93px -248px;
+                    }
+                }
+                .add{
+                    float: right;
+                    width: 59px;
+                    height: 36px;
+                    .tip{}
+                    .icn-list{
+                        display: block;
+                        width: 38px;
+                        padding-left: 21px;
+                        color: #797979;
+                        font-size: 12px;
+                        height: 25px;
+                        margin-left: 5px;
+                        margin-top: 3px;
+                        background: url('../../images/audio/playbar.png');
+                        background-position: -42px -68px;
+                        text-align: center;
+                        text-decoration: none;
+                        padding-top: 6px;
+                        &:hover{
+                            background-position: -42px -98px;
+                        }
+                    }
+                }
+            }
+        }
+        
+
+        .list{
+            position: absolute;
+            left: 50%;
+            bottom: 47px;
+            width: 986px;
+            height: 301px;
+            margin-left: -493px;
+            display: none;
+            .listhd{
+                padding: 0 5px;
+                background: url(../../images/audio/playlist_bg.png) no-repeat;
+                background-position: 0 0;
+                height: 41px;
+                .listhdc{
+                    position: relative;
+                    height: 40px;
+                    h4{
+                        position: absolute;
+                        left: 25px;
+                        top: 0;
+                        height: 39px;
+                        line-height: 39px;
+                        font-size: 14px;
+                        color: #e2e2e2;
+                        span{
+                            color: #e2e2e2;
+                        }
+                    }
+                    a{
+                        color: #ccc;
+                        font-size: 12px;
+                        .ico{
+                            float: left;
+                            margin: 1px 6px 0 0;
+                            height: 16px;
+                            background: url(../../images/audio/playlist.png) no-repeat 0 9999px;
+                        }
+                        &:hover{
+                            
+                        }
+                    }
+                    .addall{
+                        position: absolute;
+                        left: 398px;
+                        top: 12px;
+                        height: 15px;
+                        line-height: 15px;
+                        cursor: pointer;
+                        .ioc-add{
+                            width: 16px;
+                            background-position: -24px 0;
+                        }
+                        &:hover{
+                            text-decoration: underline;
+                            .ioc-add{
+                                width: 16px;
+                                background-position: -24px -20px;;
+                            }
+                        }
+                    }
+                    .line{
+                        position: absolute;
+                        top: 13px;
+                        left: 477px;
+                        height: 15px;
+                        border-left: 1px solid #000;
+                        border-right: 1px solid #2c2c2c;
+                    }
+                    .clear{
+                        position: absolute;
+                        left: 490px;
+                        top: 12px;
+                        height: 15px;
+                        line-height: 15px;
+                        cursor: pointer;
+                        .icn-del{
+                            width: 13px;
+                            background-position: -51px 0;
+                        }
+                        &:hover{
+                            text-decoration: underline;
+                            .icn-del{
+                                width: 13px;
+                                background-position: -51px -20px;
+                            }
+                        }
+                    }
+                    .lytit{
+                        position: absolute;
+                        left: 595px;
+                        top: 0;
+                        width: 346px;
+                        text-align: center;
+                        height: 39px;
+                        line-height: 39px;
+                        color: #fff;
+                        font-size: 14px;
+                    }
+                    .close{
+                        position: absolute;
+                        top: 6px;
+                        right: 8px;
+                        width: 30px;
+                        height: 30px;
+                        overflow: hidden;
+                        text-indent: -999px;
+                        cursor: pointer;
+                        background: url(../../images/audio/playlist.png) no-repeat;
+                        background-position: -195px 9px;
+                        &:hover{
+                            background-position: -195px -21px;
+                        }
+                    }
+                }
+            }
+
+
+            .listbd{
+                position: absolute;
+                left: 0;
+                top: 41px;
+                width: 976px;
+                height: 260px;
+                overflow: hidden;
+                padding: 0 5px;
+                background: url(../../images/audio/playlist_bg.png) no-repeat;
+                background-position: -1014px 0;
+                background-repeat: repeat-y;
+                .msk{
+                    position: absolute;
+                    left: 2px;
+                    top: 0;
+                    z-index: 2;
+                    width: 558px;
+                    height: 260px;
+                    background: #121212;
+                    opacity: .5;
+                }
+                .listbdc{
+                    position: absolute;
+                    left: 2px;
+                    top: 0;
+                    z-index: 4;
+                    height: 260px;
+                    width: 553px;
+                    overflow: hidden;
+                    ul{
+                        color: #ccc;
+                        overflow: hidden;
+                        li{
+                            float: left;
+                            width: 100%;
+                            &:hover{
+                                .clo-2{
+                                    color: #fff;
+                                }
+                                .clo-3{
+                                    .icns{
+                                        display: block;
+                                    }
+                                }
+                                .clo-4{
+                                    a{
+                                        color: #fff;
+                                    }
+                                }
+                                .clo-5{
+                                    color: #fff;
+                                }
+                            }         
+                            .col{
+                                float: left;
+                                padding-left: 10px;
+                                height: 28px;
+                                line-height: 28px;
+                                overflow: hidden;
+                                cursor: pointer;
+                                color: #9b9b9b;
+                                .playicn{
+                                    display: none;
+                                    margin-top: 8px;
+                                    width: 10px;
+                                    height: 13px;
+                                    background: url(../../images/audio/playlist.png) no-repeat 0 9999px;
+                                    background-position: -182px 0;
+                                }
+                            }
+                            .clo-1{
+                                width: 10px;
+                            }
+                            .clo-2{
+                                width: 256px;
+                                overflow: hidden;
+                                white-space: nowrap;
+                                text-overflow: ellipsis;
+                            }
+                            .clo-3{
+                                width: 78px;
+                                position: relative;
+                                .icns{
+                                    display: none;
+                                    position: absolute;
+                                    right: 0;
+                                    top: 0;
+                                    width: 100px;
+                                    height: 23px;
+                                    &:hover{
+                                        display: block;
+                                    }
+                                    .ico{
+                                        float: right;
+                                        overflow: hidden;
+                                        margin: 7px 0 0 10px;
+                                        text-indent: -9999px;
+                                        height: 16px;
+                                        background: url(../../images/audio/playlist.png) no-repeat 0 9999px;
+                                    }
+                                    .icn-del{
+                                        width: 13px;
+                                        background-position: -51px 0;
+                                        &:hover{
+                                            background-position: -51px -20px;
+                                        }
+                                    }
+                                    .ico-dl{
+                                        width: 14px;
+                                        background-position: -57px -50px;
+                                        &:hover{
+                                            background-position: -80px -50px;
+                                        }
+                                    }
+                                    .ico-share{
+                                        width: 14px;
+                                        background-position: 0 0;
+                                        &:hover{
+                                            background-position: 0 -20px;
+                                        }
+                                    }
+                                    .ico-add{
+                                        width: 16px;
+                                        background-position: -24px 0;
+                                        &:hover{
+                                            background-position: -24px -20px;
+                                        }
+                                    }
+                                   
+                                }           
+                            }
+                            .clo-4{
+                                width: 70px;
+                                overflow: hidden;
+                                white-space: nowrap;
+                                text-overflow: ellipsis;
+                                a{
+                                    color: #9b9b9b;
+                                }
+                            }
+                            .clo-5{
+                                width: 35px;
+                                color: #666;
+                            }
+                            .clo-6{
+                                width: 37px;
+                                padding-left: 6px;
+                                a{
+                                    color: #9b9b9b;
+                                }
+                                .ico{
+                                    float: right;
+                                    overflow: hidden;
+                                    margin: 7px 0 0 10px;
+                                    text-indent: -9999px;
+                                    height: 16px;
+                                    background: url(../../images/audio/playlist.png) no-repeat 0 9999px;
+                                }
+                                .ico-src{
+                                    width: 14px;
+                                    margin-left: 0;
+                                    background-position: -80px 0px;
+                                }
+                            }
+                        }
+                        .z-sel{
+                            .clo-2{
+                                color: #fff;
+                            }
+                            .clo-4{
+                                a{
+                                    color: #fff;
+                                }
+                            }
+                            .clo-5{
+                                color: #fff;
+                            }
+                        }
+                    }
+                }
+                .bline{
+                    position: absolute;
+                    left: 555px;
+                    top: -1px;
+                    z-index: 2;
+                    width: 6px;
+                    height: 260px;
+                    background: #000;
+                    opacity: .5;
+                    .scrol{
+                        position: absolute;
+                        left: 0;
+                        top: 0px;
+                        width: 4px;
+                        border-radius: 5px;
+                        height: 100px;
+                        cursor: pointer;
+                        background: #868686;
+                        border: 1px solid #a6a6a6;
+                        opacity: .8;
+                    }
+                }
+                .ask{
+                    position: absolute;
+                    right: 25px;
+                    top: 12px;
+                    cursor: pointer;
+                    z-index: 5;
+                    .ico-ask{
+                        display: inline-block;
+                        width: 21px;
+                        height: 21px;
+                        background: url(../../images/audio/playlist.png) no-repeat 0 9999px;
+                        background-position: 0 -50px;
+                        text-indent: 0;
+                        &:hover{
+                            background-position: -24px -50px;
+                        }
+                    }
+                }
+                .upload{
+                    position: absolute;
+                    right: 12px;
+                    top: 40px;
+                    box-shadow: 0 2px 3px rgba(0,0,0,.75);
+                    width: 81px;
+                    z-index: 5;
+                    display: none;
+                    a{
+                        display: block;
+                        text-align: center;
+                        padding: 8px 0;
+                        color: #666;
+                        background: #ebebeb;
+                        text-shadow: 0 1px 0 #fff;
+                    }
+                }
+                .msk2{
+                    position: absolute;
+                    left: 560px;
+                    top: 0;
+                    z-index: 3;
+                    width: 420px;
+                    height: 250px;
+                    background: #121212;
+                    opacity: .01;
+                }
+                .listlyric{
+                    position: absolute;
+                    right: 40px;
+                    top: 0;
+                    z-index: 4;
+                    margin: 21px 0 20px 0;
+                    height: 219px;
+                    width: 354px;
+                    overflow: hidden;
+                    p{
+                        color: #989898;
+                        word-wrap: break-word;
+                        text-align: center;
+                        line-height: 32px;
+                        height: auto !important;
+                        height: 32px;
+                        min-height: 32px;
+                        -webkit-transition: color 0.7s linear;
+                        -moz-transition: color 0.7s linear;
+                        -o-transition: color 0.7s linear;
+                        transition: color 0.7s linear;
+                        transform: translateY();
+                    }
+                    .z-sel{
+                        color: #fff;
+                        font-size: 14px;
+                    }
+                }
+                .bline{
+                    position: absolute;
+                    left: 555px;
+                    top: -1px;
+                    z-index: 2;
+                    width: 6px;
+                    height: 260px;
+                    background: #000;
+                    opacity: .5;
+                }
+                .bline-1{
+                    left: auto;
+                    right: 2px;
+                    .scrol{
+                        position: absolute;
+                        left: 0;
+                        top: 0px;
+                        width: 4px;
+                        border-radius: 5px;
+                        height: 100px;
+                        cursor: pointer;
+                        background: #868686;
+                        border: 1px solid #a6a6a6;
+                        opacity: .8;
+                    }
+                    .scrol-1{
+                        left: auto;
+                        right: 0;
+                    }
+                }
+            }
+        }
+    }
+
+    .updn{
+        overflow: hidden;
+        position: absolute;
+        right: 0px;
+        bottom: 0px;
+        width: 67px;
+        height: 67px;
+        background: url(../../images/audio/playbar.png) no-repeat;
+        background-position: 0 -380px;
+        .btn{
+            display: block;
+            width: 18px;
+            height: 18px;
+            background: url(../../images/audio/playbar.png);
+            position: absolute;
+            left: 18px;
+            top: 5px;
+            
+        }
+        .lockbtn{
+            background-position: -100px -380px;
+            &:hover{
+                background-position: -100px -400px;
+            }
+        }
+        .unlockbtn{
+            background-position: -80px -380px;
+            &:hover{
+                background-position: -80px -400px;
+            }
+        }
+    }
+}

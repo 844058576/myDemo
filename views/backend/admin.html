@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>在线音乐后台管理</title>
+    <link rel="stylesheet" href="../../public/css/backend/admin.css">
+</head>
+
+<body>
+    <div class="admin">
+        <div class="header">
+            <h1>在线音乐后台管理</h1>
+        </div>
+        <div class="cont">
+
+
+            <div class="admin_left">
+                <dl>
+                    <dt>用户管理</dt>
+                    <dt>歌手管理</dt>
+                    <dt>歌曲管理</dt>
+                    <dt>专辑管理</dt>
+                </dl>
+            </div>
+            <div class="admin_right">
+                <p style="display:none;" class="user2">{{user2}}</p>
+                <p style="display:none;" class="back">{{back}}</p>
+                <!-- 用户管理 -->
+                <div class="user">
+                    <h1>用户管理</h1>
+                    <div class="userCon">
+                        <table border="1" cellspacing="0">
+                            <thead>
+                                <tr>
+                                    <th style="width:50px">序号</th>
+                                    <th style="width:100px">帐号</th>
+                                    <th style="width:100px">密码</th>
+                                    <th style="width:80px">昵称</th>
+                                    <th style="width:200px">介绍</th>
+                                    <th style="width:50px">性别</th>
+                                    <th style="width:100px">生日</th>
+                                    <th style="width:100px">照片</th>
+                                    <th style="width:150px">操作</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {{each user2 }}
+                                <tr>
+                                    <td date-id="{{$value.userId}}">{{$index + 1}}</td>
+                                    <td>{{$value.accounts}}</td>
+                                    <td>{{$value.password}}</td>
+                                    <td>{{$value.nickname}}</td>
+                                    <td>{{$value.Introduce}}</td>
+                                    <td class="gender">{{$value.gender}}</td>
+                                    <td class="birthday">{{$value.birthday}}</td>
+                                    <td><img src="../../public/images/index/{{$value.photo}}" alt=""></td>
+                                    <td><a href="void:0" class="addUser">添加</a> <a href="void:0" class="delUser">删除</a></td>
+                                </tr>
+                                {{/each}}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <!-- 添加用户 -->
+                <div class="addUser" style="display:none;">
+                    <h1>增加用户</h1>
+                    <p><span>帐号：</span><input type="text" maxlength="10" id="accounts"><span>&nbsp;* 6-10位的帐号</span></p>
+                    <p><span>密码：</span><input type="text" maxlength="10" id="password"><span>&nbsp;* 6-10位的帐号</span></p>
+                    <p><span>昵称：</span><input type="text" maxlength="8" id="nickname"><br></p>
+                    <p><span>简介：</span><input type="text" maxlength="200" id="Introduce"><br></p>
+                    <p><span>性别：</span><input type="text" maxlength="1" id="gender"><span>&nbsp;* 1为男 2为女 0为保密</span></p>
+                    <p><span>生日：</span><input type="date" style="width:170px;" id="birthday"><br></p>
+                    <p><button class="confire">确定</button> <button class="cancel">取消</button></p>
+                </div>
+
+                <!-- 歌手管理 -->
+                <div class="singer" style="display:none;">
+                    <h1>歌手管理</h1>
+                    <div class="singerCon">
+                        <table border="1" cellspacing="0">
+                            <thead>
+                                <tr>
+                                    <th style="width:60px">序号</th>
+                                    <th style="width:100px">歌手名</th>
+                                    <th style="width:150px">歌手照片</th>
+                                    <th style="width:200px">歌手介绍</th>
+                                    <th style="width:250px">操作</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- 添加歌手 -->
+                <div class="addSinger" style="display:none;">
+                    <h1>添加歌手</h1>
+                    <form action="/administration/addSinger" method="post">
+                        <p><span style="width:73px;display: inline-block;">歌手名：</span><input type="text" name="singerName"
+                                id="singerName"></p>
+                        <p><span>歌手照片: </span><input type="text" name="singerImg" id="singerImg"><span>*
+                                图片的文件名(.jpg/.png/.gif)</span> </p>
+                        <p><span style="vertical-align: top">歌手介绍: </span><textarea name="Description" id="Description"
+                                cols="30" rows="8"></textarea> </p>
+                        <p><button class="confire">确定</button><button class="cancel" onclick="return false;">取消</button></p>
+                    </form>
+                </div>
+
+                <!-- 修改歌手 -->
+                <div class="editSinger" style="display:none;">
+                    <h1>修改歌手</h1>
+                    <form action="/administration/addSinger" method="post">
+                        <input type="hidden" name="singerID" id="singerID">
+                        <p><span style="width:73px;display: inline-block;">歌手名：</span><input type="text" name="singerName"
+                                id="singerName"></p>
+                        <p><span>歌手照片: </span><input type="text" name="singerImg" id="singerImg"><span>*
+                                图片的文件名(.jpg/.png/.gif)</span> </p>
+                        <p><span style="vertical-align: top">歌手介绍: </span><textarea name="Description" id="Description"
+                                cols="30" rows="8"></textarea> </p>
+                        <p><button class="confire">确定</button><button class="cancel" onclick="return false;">取消</button></p>
+                    </form>
+                </div>
+
+
+                <!-- 音乐管理 -->
+                <div class="song" style="display:none;">
+                    <h1>音乐管理</h1>
+                    <div class="songCon">
+                        <table border="1" cellspacing="0">
+                            <thead>
+                                <tr>
+                                    <th style="width:60px">序号</th>
+                                    <th style="width:100px">音乐名</th>
+                                    <th style="width:150px">歌手</th>
+                                    <th style="width:200px">音乐路径</th>
+                                    <th style="width:200px">歌词路径</th>
+                                    <th style="width:200px">所属专辑</th>
+                                    <th style="width:150px">歌曲时长</th>
+                                    <th style="width:150px">添加时间</th>
+                                    <th style="width:200px">操作</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <!-- 音乐添加 -->
+                <div class="addSong" style="display:none;">
+                    <h1>添加音乐</h1>
+                    <form action="/administration/addSong" method="post">
+                        <p><span style="width:80px;display: inline-block;">音乐名：</span><input type="text" name="MusicName"
+                                id="MusicName"></p>
+                        <p><span style="width:80px;display: inline-block;">歌手Id: </span><input type="number" name="SingerId"
+                                id="SingerId"><span> *数字
+                            </span> </p>
+                        <p><span style="width:80px;display: inline-block;">歌曲文件: </span><input type="text" name="MusicUrl"
+                                id="MusicUrl"> *请输入.mp3结尾的文件名</p>
+                        <p><span style="width:80px;display: inline-block;">歌词文件：</span><input type="text" name="Lyric"
+                                id="Lyric"> *请输入.lrc结尾的文件名</p>
+                        <p><span>所属专辑：</span><input type="number" name="CDId" id="CDId"></p>
+                        <p><span>歌曲时长：</span><input type="text" name="songTime" id="songTime"></p>
+                        <p><button class="confire">确定</button><button class="cancel" onclick="return false;">取消</button></p>
+                    </form>
+                </div>
+                <!-- 修改歌曲 -->
+                <div class="editSong" style="display:none;">
+                    <h1>修改歌曲</h1>
+                    <form action="/administration/editSong" method="post">
+                        <input type="hidden" name="Id" id="Id">
+                        <p><span style="width:80px;display: inline-block;">音乐名：</span><input type="text" name="MusicName"
+                                id="MusicName"></p>
+                        <p><span style="width:80px;display: inline-block;">歌手Id: </span><input type="text" name="SingerId"
+                                id="SingerId"><span>*
+                            </span> </p>
+                        <p><span style="width:80px;display: inline-block;">歌曲文件: </span><input type="text" name="MusicUrl"
+                                id="MusicUrl"> </p>
+                        <p><span style="width:80px;display: inline-block;">歌词文件：</span><input type="text" name="Lyric"
+                                id="Lyric"></p>
+                        <p><span>所属专辑：</span><input type="text" name="CDId" id="CDId"></p>
+                        <p><span>歌曲时长：</span><input type="text" name="songTime" id="songTime"></p>
+                        <p><button class="confire">确定</button><button class="cancel" onclick="return false;">取消</button></p>
+                    </form>
+                </div>
+
+
+                <!-- 专辑管理 -->
+                <div class="album" style="display:none;">
+                    <h1>专辑管理</h1>
+                    <div class="albumCon">
+                        <table border="1" cellspacing="0">
+                            <thead>
+                                <tr>
+                                    <th style="width:100px">专辑序号</th>
+                                    <th style="width:180px">专辑名称</th>
+                                    <th style="width:150px">专辑图片</th>
+                                    <th style="width:250px">操作</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- 添加专辑 -->
+                <div class="addAlbum" style="display:none;">
+                    <h1>添加专辑</h1>
+                    <form action="/administration/addAlbum" method="post">
+                        <p><span style="width:73px;display: inline-block;">专辑名称:</span><input type="text" name="CDName"
+                                id="CDName"></p>
+                        <p><span style="width:73px;display: inline-block;">歌手Id:</span><input type="number" name="singerId"
+                                id="singerId"></p>
+                        <p><span>专辑照片: </span><input type="text" name="CDImg" id="CDImg"><span>*
+                                图片的文件名(.jpg/.png/.gif)</span> </p>
+                        <p><button class="confire">确定</button><button class="cancel" onclick="return false;">取消</button></p>
+                    </form>
+                </div>
+
+                <!-- 修改专辑 -->
+                <div class="editAlbum" style="display:none;">
+                    <h1>修改专辑</h1>
+                    <form action="/administration/editAlbum=" + CDId method="post">
+                        <input type="hidden" name="CDId" id="CDId">
+                        <p><span style="width:73px;display: inline-block;">专辑名称:</span><input type="text" name="CDName"
+                                id="CDName"></p>
+                        <p><span style="width:73px;display: inline-block;">歌手Id:</span><input type="number" name="singerId"
+                                id="singerId"></p>
+                        <p><span>专辑照片: </span><input type="text" name="CDImg" id="CDImg"><span>*
+                                图片的文件名(.jpg/.png/.gif)</span> </p>
+                        <p><button class="confire">确定</button><button class="cancel" onclick="return false;">取消</button></p>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+    <script src="../node_modules/jquery/dist/jquery.js"></script>
+    <script src="../../public/js/backend/backend.js"></script>
+    <script>
+    
+    </script>
+</body>
+
+</html>
